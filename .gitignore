@@ -1,11 +1,4 @@
 /node_modules
-/dist
-/bower_components
-/public/lib
-/public/js/min
-/public/css/min
 /logs
 /.sass-cache
 /routes
-/prod
-/.tmp

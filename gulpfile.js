@@ -50,7 +50,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src(['public/scss/main.scss'])
+  return gulp.src(['./public/scss/main.scss'])
     .pipe(compass({
       css: './public/scss/css',
       sass: './public/scss',
@@ -64,11 +64,11 @@ gulp.task('styles', function() {
       suffix: '.min'
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./.tmp/css'));
+    .pipe(gulp.dest('./public/scss/css'));
 });
 
 gulp.task('scripts', ['lint'], function() {
-  return gulp.src('public/js/**/*.js')
+  return gulp.src(['./public/js/**/*.js', '!./public/js/min/**/*.js'])
     // .pipe(concat('main.js'))
     // .pipe(gulp.dest('./public/js/min'))
     .pipe(changed('./public/js/**/*.js'))
@@ -78,18 +78,20 @@ gulp.task('scripts', ['lint'], function() {
     }))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./.tmp/js'));
+    .pipe(gulp.dest('./public/js/min'));
 });
 
 gulp.task('inject', function() {
   var wiredep = require('wiredep').stream;
   var inject = require('gulp-inject');
 
-  var injectSrc = gulp.src(['./.tmp/css/*.css', './.tmp/js/*.js', './.tmp/js/**/*.js'], {
-    read: false
+  var injectSrc = gulp.src(['./public/scss/css/*.min.css', './public/js/min/*.js', './public/js/min/**/*.js'], {
+    empty: true,
+    read: false,
   });
   var injectOptions = {
-    ignorePath: '/.tmp/'
+    ignorePath: 'public',
+    addRootSlash: false
   };
 
   var wireDepOptions = {
@@ -240,7 +242,7 @@ gulp.task('inject:build', ['scripts:build'], function() {
 });
 
 gulp.task('build', ['inject:build'], function() {
-  gulp.src(['server.js', 'config.js', 'run_local.sh', 'run_dev3.sh', 'run_prod1.sh'])
+  gulp.src(['server.js', 'config.js'])
   .pipe(gulp.dest('./prod'))
   gulp.src('public/img/**/*')
   .pipe(gulp.dest('./prod/public/img'))
