@@ -1,0 +1,61 @@
+#home_header {
+  padding: 1em;
+  nav {
+    color: $black;
+    font-size: 0.9em;
+    line-height: 60px;
+    position: relative;
+    & > * {
+      vertical-align: middle;
+      line-height: normal
+    }
+    a {
+      display: inline-block;
+      width: 6em;
+      padding: 0.5em;
+      text-align: center;
+      text-decoration: none;
+      margin-right: 0.75em;
+      color: inherit;
+      &.active {
+        color: $red;
+      }
+      &.active:hover {
+        color: $red;
+      }
+      &:hover {
+        color: $lightGray;
+      }
+    }
+    span.pull_right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+      height: 100%;
+      line-height: 60px;
+      & > * {
+        vertical-align: middle;
+        line-height: normal;
+      }
+      a {
+        display: inline-block;
+        border-radius: 3px;
+      }
+      a:nth-child(1) {
+        background-color: $lightGray;
+        &:hover {
+          color: $black;
+        }
+      }
+      a:nth-child(2) {
+        background-color: $green;
+        color: $white;
+        &:hover {
+          
+        }
+      }
+    }
+  }
+}

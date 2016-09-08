@@ -1,0 +1,12 @@
+<nav class="navigation-main">
+  <ul>
+    <li data-ng-repeat="navItem in main.navigation">
+      <a ui-sref="{{navItem.state}}" data-ng-class="{active: main.state.current.name === navItem.state}">{{navItem.label}}</a>
+    </li>
+    <li>
+      <a class="nav-logout" data-ng-click="main.logoutUser()">Logout</a>
+    </li>
+  </ul>
+  <p>{{user}}</p>
+</nav>
+<section ui-view class="main-child-view"></section>

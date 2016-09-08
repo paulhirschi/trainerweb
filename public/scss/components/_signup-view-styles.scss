@@ -1,0 +1,41 @@
+.signup-outer-container {
+  @include span(1/1);
+  color: $white;
+  height: 700px;
+  background: url('/img/workout.jpg') no-repeat top center;
+  background-size: cover;
+  .signup-inner-container {
+    @include center(900px);
+    padding-top: 10%;
+    h1, h4 {
+      color: $white;
+    }
+    .signup-text {
+      @include col(1/2);
+    }
+    .signup-form {
+      @include col(1/2);
+    }
+  }
+}
+
+.signup-form {
+  @include center(75%);
+  text-align: center;
+  .form-fields {
+    .form-input {
+      input {
+        width: 90%;
+        padding: 1em;
+        margin-bottom: 1em;
+        color: $black;
+        border: none;
+        border-radius: 3px;
+      }
+      input[type='submit'] {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}

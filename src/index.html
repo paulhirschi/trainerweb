@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-ng-app="trainerWeb">
+<head>
+  <meta charset="utf-8">
+  <title data-ng-bind="pageTitle"></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <base href="/">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/main.min.css">
+  <!-- endinject -->
+  <!-- bower:js  -->
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-animate/angular-animate.min.js"></script>
+  <script src="lib/angular-aria/angular-aria.min.js"></script>
+  <script src="lib/angular-cookies/angular-cookies.min.js"></script>
+  <script src="lib/angular-messages/angular-messages.min.js"></script>
+  <script src="lib/angular-touch/angular-touch.min.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="lib/angular-socket-io/socket.min.js"></script>
+  <!-- endbower -->
+  <!-- inject:js -->
+  <script src="/js/app.min.js"></script>
+  <script src="/js/services/authentication.service.min.js"></script>
+  <script src="/js/controllers/blog.controller.min.js"></script>
+  <script src="/js/controllers/dashboardView.controller.min.js"></script>
+  <script src="/js/controllers/help.controller.min.js"></script>
+  <script src="/js/controllers/home.controller.min.js"></script>
+  <script src="/js/controllers/homeView.controller.min.js"></script>
+  <script src="/js/controllers/login.controller.min.js"></script>
+  <script src="/js/controllers/main.controller.min.js"></script>
+  <script src="/js/controllers/notifications.controller.min.js"></script>
+  <script src="/js/controllers/settings.controller.min.js"></script>
+  <!-- endinject -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+  <section ui-view class="the-view"></section>
+
+  
+  <script>
+    var socket = io.connect('/');
+    socket.on('tweet', function(tweet) {
+      console.log(tweet);
+    });
+  </script>
+</body>
+</html>

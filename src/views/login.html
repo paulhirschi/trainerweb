@@ -1,0 +1,23 @@
+<div class="login-wrap">
+<div class="login-fields">
+  <form data-ng-submit="login.loginUser()">
+  <div class="login-main-logo">
+    <img src="img/login-main-logo.svg" alt="">
+  </div>
+  <div class="login-input">
+      <input type="text" placeholder="your name" data-ng-model="login.loginData.name" required>
+      <img src="img/lock-icon.svg" alt="">
+    </div>
+    <div class="login-input">
+      <input type="text" placeholder="username" data-ng-model="login.loginData.user" required>
+      <img src="img/user-icon.svg" alt="">
+    </div>
+    <div class="login-input">
+      <input type="password" placeholder="password" data-ng-model="login.loginData.pass" required>
+      <img src="img/lock-icon.svg" alt="">
+    </div>
+    <input type="submit" value="Login"></input>
+    <p class="errorMessage" data-ng-if="errorMessage">{{errorMessage}}</p>
+  </form>
+  </div>
+</div>

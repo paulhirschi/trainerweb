@@ -1,0 +1,30 @@
+<div class="signup-outer-container">
+  <div class="signup-inner-container">
+    <div class="signup-text">
+      <h1>Fit Bodies and Fit Minds start here.</h1>
+      <h4>A healthy mindset is the key to a healthy life. Come discover the difference a wholistic approach makes. Say no to drugs, as well -- 'cause thats also healthy.</h4>
+    </div>
+    <div class="signup-form">
+      <div class="form-fields">
+        <form data-ng-submit="login.loginUser()">
+          <div class="form-input">
+            <input type="text" placeholder="first name" data-ng-model="signup.signupData.firstName" required>
+          </div>
+          <div class="form-input">
+            <input type="text" placeholder="last name" data-ng-model="signup.signupData.lastName" required>
+          </div>
+          <div class="form-input">
+            <input type="text" placeholder="email" data-ng-model="signup.signupData.email" required>
+          </div>
+          <div class="form-input">
+            <input type="password" placeholder="password" data-ng-model="signup.signupData.password" required>
+          </div>
+          <div class="form-input">
+            <input type="submit" value="Sign Up"></input>
+          </div>
+          <p class="errorMessage" data-ng-if="errorMessage">{{errorMessage}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

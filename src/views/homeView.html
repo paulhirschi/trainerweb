@@ -1,0 +1,14 @@
+<header id="home_header">
+  <nav>
+    <img src="img/johnny-five.png" style="width: 60px;">
+    <a data-ng-repeat="navItem in homeView.navigation" ui-sref="{{navItem.state}}" data-ng-class="{active: homeView.state.current.name === navItem.state}">{{navItem.label}}</a>
+    <span class="pull_right">
+      <a ui-sref="login">Login</a>
+      <a ui-sref="homeView.signup">Sign Up</a>
+    </span>
+  </nav>
+</header>
+<section ui-view class="home-child-view"></section>
+<footer>
+  <p>here be ye the footer</p>
+</footer>

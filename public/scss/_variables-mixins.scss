@@ -1,0 +1,13 @@
+$white: #FDFEFE;
+$lightGray: #D6DBDF;
+$darkGray: #979A9A;
+$black: #626567;
+$red: #E57373;
+$green: #5CB75C;
+
+$display: 'Varela Round', sans-serif;
+$text: 'Source Sans Pro', sans-serif;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
