@@ -1,6 +1,6 @@
 module.exports = function() {
   switch(process.env.NODE_ENV){
-    case 'dev':
+    case 'development':
       return {
         'port'                    : process.env.PORT || 9000,
         'user'                    : process.env.ECHOBASE_USER,
@@ -12,7 +12,7 @@ module.exports = function() {
         'twitter_token'           : process.env.TWITTER_TOKEN,
         'twitter_token_secret'    : process.env.TWITTER_TOKEN_SECRET
       };
-    case 'prod':
+    case 'production':
       return {
         'port'                    : process.env.PORT || 9000,
         'user'                    : process.env.ECHOBASE_USER,
